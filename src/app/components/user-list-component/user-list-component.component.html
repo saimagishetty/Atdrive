@@ -1,0 +1,33 @@
+<div class="card">
+    <p>user-list-component works!</p>
+    <span>Go to Dashboard Component : </span><a routerLink="/">Dashboard</a>
+    <h2>Users</h2>
+    <div>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" >
+            <label for="name">Filter by Name:</label>
+            <input type="text" name="name" id="name" [(ngModel)]="filter.name" /> <br>
+            <label for="email">Filter by Email:</label>
+            <input type="text" name="email" id="email" [(ngModel)]="filter.email" /> <br>
+            <button>Submit</button>
+        </form>
+        <!-- <div *ngFor="let user of filteredUsers">
+            {{ user.name }} - {{ user.email }}
+        </div> -->
+
+    </div>
+    <div *ngIf="!data" class="loading">
+        <span class="material-symbols-outlined">
+            sync
+        </span>
+        <span>Loading...</span>
+    </div>
+    <div *ngIf="data" class="Allcards">
+        <div class="card Usercard" *ngFor="let a of users">
+            <div> <span>Name</span> : {{a.name}}</div>
+            <div> <span>Username</span> : {{a.username}}</div>
+            <div> <span>Email</span> : {{a.email}}</div>
+            <div> <span>Address</span> : {{a.address.street}}{{a.address.suite}}{{a.address.city}} {{a.address.zipcode}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.Usercard {
+    width: 300px;
+}
+
+.Allcards {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px 10px;
+    flex-wrap: wrap;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.material-symbols-outlined {
+    display: inline-block;
+    animation: rotate 1s linear infinite;
+    /* Adjust the duration and timing function as needed */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
